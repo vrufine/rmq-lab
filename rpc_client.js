@@ -4,10 +4,10 @@ const args = process.argv.slice(2)
 
 if (args.length === 0) {
   console.log(' = Como usar: node rpc_client.js <numero>')
-  process.exit(1)
+  process.exit(0)
 }
 
-amqp.connect('amqp://localhost', (err, conn) => {
+amqp.connect('amqp://localhost:5672', (err, conn) => {
   if (err) console.log(err)
   conn.createChannel((err2, ch) => {
     if (err2) console.log(err2)

@@ -8,7 +8,7 @@ function fibonacci (n) {
   }
 }
 
-amqp.connect('amqp://localhost', (err, conn) => {
+amqp.connect('amqp://localhost:5672', (err, conn) => {
   if (err) console.log(err)
   conn.createChannel((err, ch) => {
     if (err) console.log(err)
